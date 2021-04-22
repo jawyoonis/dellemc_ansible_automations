@@ -1,0 +1,16 @@
+- name: SONiC Management Framework CLI configuration examples
+  hosts: sonic-sw1
+  gather_facts: no
+  connection: httpapi
+  collections:
+    - dellemc.enterprise_sonic
+  tasks:
+    - name: Add VLAN entry
+      sonic_vlans:
+         config:
+          - vlan_id: 701
+          - vlan_id: 702
+          - vlan_id: 703
+          - vlan_id: 704
+         state: merged
+      register: sonic_vlans_output

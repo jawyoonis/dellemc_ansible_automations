@@ -1,0 +1,8 @@
+- hosts: os10_sw1
+  connection: network_cli
+  collections:
+    - dellemc.os10
+  roles:
+    - os10_vlan
+    - os10_interface
+

@@ -1,0 +1,26 @@
+hostname: os10_sw1
+# Parameters for connection type network_cli
+ansible_ssh_user: admin
+ansible_ssh_pass: admin
+ansible_network_os: dellemc.os10.os10
+
+# Create vlan100 and delete vlan888
+os10_vlan:
+    vlan 100:
+      description: "Blue"
+      state: present
+    vlan 888:
+      state: absent
+ 
+os10_interface:
+    vlan 100:
+      ip_and_mask: "10.1.1.1/24"
+      virtual_gateway_ip: "10.1.1.254"
+      virtual_gateway_ipv6: "10:1:1::254"
+      admin: down
+    ethernet 1/1/13:
+      desc: "set ipv6 address"
+      switchport: False
+      admin: up
+      ipv6_and_mask: 2001:4898:5809:faa2::10/126
+      state_ipv6: present
