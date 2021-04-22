@@ -1,0 +1,4 @@
+paramiko>=2.7
+jinja2>=2.8
+ansible-base
+
