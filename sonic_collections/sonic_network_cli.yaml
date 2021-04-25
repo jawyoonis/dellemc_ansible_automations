@@ -12,5 +12,6 @@
           - vlan_id: 702
           - vlan_id: 703
           - vlan_id: 704
+          - vlan_id: 705
          state: merged
       register: sonic_vlans_output
